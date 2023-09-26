@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>word count</title>
+  <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/word-count-3933155-3284921.png?f=avif&w=256" type="image/x-icon">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-image: url(https://img.freepik.com/premium-photo/word-count-is-made-wooden-cubes-white-background-medical-concept_284815-4800.jpg?w=740);
+    background-size: cover;
+    background-position-y :-100px ;
+      background-repeat: no-repeat;
+    }
+    
+    h1 {
+      color: #242424;
+    }
+    
+    .container {
+      margin-top: 100px;
+      margin-left: 650px;
+      margin-right: auto;
+      width: fit-content;
+      background-image: url(https://whatsnewinpublishing.com/wp-content/uploads/2022/09/diana-polekhina-Xg-ut7qtJiM-unsplash-1170x780.jpg);
+      padding: 30px;
+      border-radius: 15px;
+    }
+    
+    .input-group {
+      margin-bottom: 20px;
+    }
+    
+    .input-group label {
+      display: inline-block;
+      width: 100px;
+      text-align: left;
+    }
+    
+    .input-group textarea {
+      padding: 5px;
+      width: 300px;
+      height: 100px;
+    }
+    
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .result {
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Word and Character Counter</h1>
+    <div class="input-group">
+      <textarea id="textInput" placeholder="Enter your content" style="resize: none;" ></textarea>
+    </div>
+    <button class="btn" onclick="countWordsAndCharacters()">Count</button>
+    <br><br>
+
+    <div class="result" id="result">Result</div>
+  </div>
+
+  <script>
+    function countWordsAndCharacters() {
+      var textInput = document.getElementById("textInput").value;
+      var words = textInput.split(/\s+/).filter(function(word) {
+        return word.length > 0;
+      });
+      var wordCount = words.length;
+      var characterCount = textInput.length;
+
+      document.getElementById("result").innerText = "Word count: " + wordCount + ", Character count: " + characterCount;
+    }
+  </script>
+</body>
+</html>
